@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "adminUsername": {
+        "value": "bronze"
+      },
+      "adminPassword": {
+        "value": "Mat@6300'bronze"
+      },
+      "dnsLabelPrefix": {
+        "value": "[toLower(format('{0}-{1}', parameters('vmName'), uniqueString(resourceGroup().id, parameters('vmName'))))]"
+      },
+      "publicIpName": {
+        "value": "myPublicIP"
+      },
+      "publicIPAllocationMethod": {
+        "value": "Dynamic"
+      },
+      "publicIpSku": {
+        "value": "Basic"
+      },
+      "OSVersion": {
+        "value": "2019-datacenter-core-smalldisk-g2"
+      },
+      "vmSize": {
+        "value": "Standard_B1s"
+      },
+      "location": {
+        "value": "[resourceGroup().location]"
+      },
+      "vmName": {
+        "value": "simple-vm"
+      }
+    }
+  }

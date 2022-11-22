@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "vmName": {
+        "value": "simpleLinuxVM"
+      },
+      "adminUsername": {
+        "value": "bronze"
+      },
+      "authenticationType": {
+        "value": "password"
+      },
+      "adminPasswordOrKey": {
+        "value": "Mat@6300'bronze"
+      },
+      "dnsLabelPrefix": {
+        "value": "[toLower(format('{0}-{1}', parameters('vmName'), uniqueString(resourceGroup().id)))]"
+      },
+      "ubuntuOSVersion": {
+        "value": "18.04-LTS"
+      },
+      "location": {
+        "value": "[resourceGroup().location]"
+      },
+      "vmSize": {
+        "value": "Standard_B2s"
+      },
+      "virtualNetworkName": {
+        "value": "vNet"
+      },
+      "subnetName": {
+        "value": "Subnet"
+      },
+      "networkSecurityGroupName": {
+        "value": "SecGroupNet"
+      }
+    }
+  }
